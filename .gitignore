@@ -1,0 +1,12 @@
+﻿UserSettings
+.vs
+.vscode
+Library
+Logs
+obj
+Packages
+Temp
+.vsconfig
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+test_xlab.sln
