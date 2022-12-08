@@ -28,7 +28,12 @@ public class RainCloudLogic : MonoBehaviour
         MovementLogic();
         ProgressCut();
 
-        if (Input.GetKeyDown(KeyCode.Z)&&!isMoving)
+        
+    }
+
+    public void Action()
+    {
+        if (!isMoving)
         {
             LapStep();
         }

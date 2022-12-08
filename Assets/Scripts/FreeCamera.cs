@@ -10,6 +10,7 @@ public class FreeCamera : MonoBehaviour
 	public float acceleration = 10f;
 	public float sensitivity = 5f; // чувствительность мыши
 	public Camera mainCamera;
+	[SerializeField] InputManager inputManager;
 	//public BoxCollider boxCollider;
 
 	private Rigidbody body;
@@ -53,11 +54,11 @@ public class FreeCamera : MonoBehaviour
 
 	void Move()
 	{
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		float h = inputManager.horizontalInput;
+		float v = inputManager.verticalInput;
 
-		float rotX = mainCamera.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivity;
-		rotY += Input.GetAxis("Mouse Y") * sensitivity;
+		float rotX = mainCamera.transform.localEulerAngles.y + inputManager.mouseXInput * sensitivity;
+		rotY += inputManager.mouseYInput * sensitivity;
 		rotY = Mathf.Clamp(rotY, -90, 90);
 
 		if (Input.GetKey(KeyCode.Mouse1))

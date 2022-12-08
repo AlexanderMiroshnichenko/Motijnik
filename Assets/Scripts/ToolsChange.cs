@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class ToolsChange : MonoBehaviour
 {
-   [SerializeField] MeshFilter[] items;
-   [SerializeField] Mesh[] itemsToChange;
- 
-  
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            {
-            for (int i=0; i< items.Length; i++)
-            {
-                items[i].mesh = itemsToChange[Random.Range(0, itemsToChange.Length)];
-            }
-            }
-    }
+
+	[SerializeField]
+	private Farmer[] m_farmers;
+
+	public void Action()
+	{
+		foreach (var item in m_farmers)
+		{
+			item.ChangeTool();
+		}
+	}
 }
